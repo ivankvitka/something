@@ -1,48 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .btn {
-  background-color: gray;
-  color: blue;
+  display: inline-block;
+  padding: 0 15px 0;
+  font-family: "PT Sans", sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 35px;
+  background-color: #50c3af;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
-.block {
+.btn:hover {
+  background-color: #39a794;
+  box-shadow: 0 2px 10px 2px #39a794;
+}
+
+.btn--gray {
+  background-color: #d2d5da;
+}
+
+.btn--gray:hover {
+  background-color: #b6bbc3;
+  box-shadow: 0 2px 10px 2px #b6bbc3;
+}
+
+.features {
   display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
-  justify-content: flex-end;
-  width: 100%;
-  height: 500px;
-  background-color: red;
+  justify-content: center;
+  padding: 55px 0 65px;
+  background-color: #eeeeef;
 }
 
-.block__element {
-  width: 20%;
-  height: 100px;
-  background-color: yellow;
-  border: 10px solid black;
-  padding: 20px;
+.features__body {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
 }
 
-.block__element--blue {
-  height: 200px;
-  background-color: blue;
-  align-self: flex-end;
+@media all and (max-width: 560px) {
+  .features__body {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.block__btn {
-  background-color: white;
+.features__item {
+  position: relative;
+  width: 170px;
+  padding-top: 70px;
+  text-align: center;
 }
 
-.block--green {
-  background-color: green;
+@media all and (max-width: 560px) {
+  .features__item {
+    margin-bottom: 40px;
+  }
+}
+
+.features__item:last-child {
+  margin-bottom: 0;
+}
+
+.features__item::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  content: '';
+  width: 43px;
+  height: 42px;
+  display: block;
+  transform: translateX(-50%);
+  background-image: url("../img/heart.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.features__item:first-child::before {
+  background-image: url("../img/user-img.png");
+}
+
+.features__item:last-child::before {
+  background-image: url("../img/headset.png");
+}
+
+.features__item-title {
+  position: relative;
+  margin-bottom: 40px;
+  color: #40474e;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.features__item-title::after {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  content: "";
+  display: block;
+  width: 135px;
+  border-bottom: 1px solid #e2e3e4;
+  transform: translateX(-50%);
+}
+
+.features__item-description {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #787b80;
 }
